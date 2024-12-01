@@ -1,0 +1,53 @@
+<div class="login-container shadow">
+  <div class="login-info-container">
+    <h1 class="title">Registrarse</h1>
+      <form class="w-100 p-5" [formGroup]="userFormGroup">
+        <div class="row justify-content-between">
+            <mat-form-field  class="col-md-6" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="FirstName" maxlength="50" required>
+                @if (userControls['FirstName'].invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="col-md-6" appearance="outline">
+                <mat-label>Apellido</mat-label>
+                <input  matInput type="text" formControlName="LastName" required maxlength="120">
+                @if (userControls['LastName'].invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-between">
+            <mat-form-field class="col-md-6" appearance="outline">
+                <mat-label>Correo</mat-label>
+                <input  matInput type="text" formControlName="Email" required maxlength="120">
+                @if (userControls['Email'].invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="col-md-6" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input  matInput type="text" formControlName="UserName" required maxlength="25">
+                @if (userControls['UserName'].invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-between">
+          <mat-form-field class="col-md-6" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input  matInput [type]="hide ? 'password' : 'text'" formControlName="Password" required maxlength="30">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              @if (userControls['Password'].invalid) {
+                  <mat-error>{{errorMessage()}}</mat-error>
+              }
+          </mat-form-field>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <button class="btn btn-primary btn-w" [disabled]="!userFormGroup.valid" (click)="register()">Guardar</button>
+          <button class=" btn btn-danger btn-w"  (click)="cancel()">Cancelar</button>
+        </div>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="login-container shadow">
+  <div class="login-info-container">
+    <h1 class="title">Inicio de sesión</h1>
+    <form class="inputs-container" [formGroup]="loginFormGroup">
+        <mat-form-field class="mat-w" appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput type="text" formControlName="UserName" maxlength="25" required>
+          @if (projectControls['UserName'].invalid) {
+            <mat-error>{{errorMessage()}}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="mat-w" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput  [type]="hide ? 'password' : 'text'" formControlName="Password" maxlength="30" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          @if (projectControls['Password'].invalid) {
+            <mat-error>{{errorMessage()}}</mat-error>
+          }
+        </mat-form-field>
+
+        <button class="btn" (click)="login()" [disabled]="!loginFormGroup.valid">Iniciar</button>
+        <p><span class="span" (click)="register()">Crea tu cuenta</span></p>
+    </form>
+  </div>
+    <img class="image-container" src="./login.svg" alt="">
+</div>

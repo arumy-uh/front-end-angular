@@ -1,0 +1,39 @@
+.sidebar {
+    height: 100%;
+    width: 250px;
+    overflow-x: hidden;
+    background-color: #4e73df
+}
+  
+.sidebar .sidebar-brand {
+    height: 4.375rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.sidebar-brand-icon i {
+    font-size: 2rem;
+}
+
+.sidebar hr.sidebar-divider {
+    margin: 0 1rem 1rem;
+    border-top: 1px solid #ffffff;
+}
+.sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+}
+.nav-item.active .nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+

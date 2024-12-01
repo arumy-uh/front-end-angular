@@ -1,0 +1,16 @@
+.navbar {
+    background-color:#ffffff !important;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: #504e4e !important;
+}
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    color: #211f1f !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
